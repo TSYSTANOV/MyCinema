@@ -1,6 +1,7 @@
 import slideMenu from "./menu.js";
 import renderVideo from './renderVideo.js'
 import menuLink from "./menuLink.js";
+import headerSlide from './header.js'
 
 let settings=
 {
@@ -11,6 +12,8 @@ let settings=
     'closeTrigger':'.navigation__link'
 }
 slideMenu(settings)
+
+headerSlide()
 
 renderVideo()
 
