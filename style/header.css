@@ -20,6 +20,7 @@
     line-height: 29px;
     text-transform: uppercase;
     max-width: 106px;
+    cursor: pointer;
 }
 
 .header__logo-primary {

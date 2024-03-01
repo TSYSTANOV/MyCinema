@@ -1,3 +1,5 @@
+import renderVideo from "./renderVideo.js"
+
 let header = document.querySelector('.header')
 let height = header.getBoundingClientRect().height
     header.style.top = `-${height}px`
@@ -21,5 +23,11 @@ function headerSlide(){
         }
     })
 }
+
+let headerLogo = document.querySelector('.header__logo')
+headerLogo.addEventListener('click', renderVideo)
+
+
+
 
 export default headerSlide

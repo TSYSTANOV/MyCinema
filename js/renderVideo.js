@@ -4,6 +4,9 @@ import renderCard from './renderCard.js'
 let filmWeek = document.querySelector('.film-week')
 
 function firstRender(data){
+    let titleText = document.querySelector('.other-films__title')
+    titleText.textContent = `В ТРЕНДЕ СЕЙЧАС`
+    filmWeek.style.display = 'block'
     filmWeek.innerHTML = `
     <div class="container film-week__container" data-rating="${data.vote_average.toFixed(1)}">
         <div class="film-week__poster-wrapper">
@@ -23,7 +26,7 @@ async function renderVideo(){
     otherCard.length = 16
     firstRender(firstCard)
     renderCard(otherCard)
-}
+}   
 
 export default renderVideo
 
