@@ -25,13 +25,22 @@ const options = {
 }
 export const getTrendsForDay = async (type = 'all', period='day', page = 1) =>{
   let data = await getData(`/trending/${type}/${period}?language=ru-RU&page=${page}`)
-  return data
+  return [data, type]
 }
 
 export const getTop = async (type = 'movie', page = 1) =>{
-  return await getData(`/${type}/top_rated?language=ru-RU&page=${page}`)
+  return [await getData(`/${type}/top_rated?language=ru-RU&page=${page}`),type]
 }
 
 export const getPopular = async (type = 'movie', page = 1) => {
-  return await getData(`/${type}/popular?language=ru-RU&page=${page}`)
+  return [await getData(`/${type}/popular?language=ru-RU&page=${page}`),type]
+}
+
+export const getVideo = async (id, type = 'tv') =>{
+  return await getData(`/${type}/${id}/videos?language=en-US`)
+}
+// https://api.themoviedb.org/3/search/person?include_adult=false&language=ru-RU&page=1
+
+export const search = async (quary, page = 1)=>{
+  return await getData(`/search/multi?query=${quary}&include_adult=false&language=ru-RU&page=${page}'`)
 }
