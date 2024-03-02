@@ -2,9 +2,10 @@ import { getVideo } from "./services.js"
 
 const listCard = document.querySelector('.other-films__list')
 
-const renderCard = (data) => {
-
-    listCard.textContent = ''
+const renderCard = (data, loadMore = false) => {
+    if(!loadMore){
+        listCard.textContent = ''
+    }
     let elems = Array.isArray(data[0]) ? data[0] : data[0].results
     
     Promise.all(elems.map(async(el)=>{
@@ -12,10 +13,10 @@ const renderCard = (data) => {
         let key = null
         if(!(el.media_type === 'person')){
             video = await getVideo(el.id, data[1] === 'all' ? el.media_type : data[1])
-          
+            
             key = video.results[0] ? video.results[0].key : '!#'
         }
-        
+     
         let card = document.createElement('li')
         card.className = 'other-films__item'
         card.innerHTML = `

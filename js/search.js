@@ -5,9 +5,11 @@ let titleText = document.querySelector('.other-films__title')
 let filmWeek = document.querySelector('.film-week')
 let searchForm = document.querySelector('.header__search-form')
 let searchInput = document.querySelector('.header__search-input')
+let btn = document.querySelector('.other-films__title_load-more')
 
 const search = ()=>{
     searchForm.addEventListener('submit',()=>{
+        btn.style.display = 'none'
         event.preventDefault()
         if(!searchInput.value) return
         searchGet(searchInput.value)

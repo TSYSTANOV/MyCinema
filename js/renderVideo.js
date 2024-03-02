@@ -7,7 +7,10 @@ let filmWeek = document.querySelector('.film-week')
 function firstRender(data, keyVideo){
     let titleText = document.querySelector('.other-films__title')
     titleText.textContent = `В ТРЕНДЕ СЕЙЧАС`
+    titleText.dataset.activeFilms = '/trending/all/week?language=ru-RU'
+    titleText.dataset.type = 'all'
     filmWeek.style.display = 'block'
+    titleText.dataset.page = '1'
     filmWeek.innerHTML = `
     <div class="container film-week__container" data-rating="${data.vote_average.toFixed(1)}">
         <div class="film-week__poster-wrapper">
@@ -23,10 +26,13 @@ function firstRender(data, keyVideo){
 
 
 async function renderVideo(){
+    let btn = document.querySelector('.other-films__title_load-more')
+    btn.style.display = 'block'
+
     let data = await getTrendsForDay()
     let [firstCard, ...otherCard] = data[0].results
 
-    otherCard.length = 16
+    otherCard.length = 18
     let video = await getVideo(firstCard.id, firstCard.media_type)
    
     let key = video.results[video.results.length - 1].key

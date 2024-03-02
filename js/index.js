@@ -1,8 +1,9 @@
 import slideMenu from "./menu.js";
 import renderVideo from './renderVideo.js'
-import menuLink from "./menuLink.js";
+import {menuLink} from "./menuLink.js";
 import headerSlide from './header.js'
 import search from "./search.js";
+import {loadMoreFilms} from "./loadMore.js";
 
 let settings=
 {
@@ -21,3 +22,5 @@ renderVideo()
 menuLink()
 
 search()
+
+loadMoreFilms()

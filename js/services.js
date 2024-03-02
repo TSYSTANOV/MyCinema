@@ -44,3 +44,5 @@ export const getVideo = async (id, type = 'tv') =>{
 export const search = async (quary, page = 1)=>{
   return await getData(`/search/multi?query=${quary}&include_adult=false&language=ru-RU&page=${page}'`)
 }
+
+export default getData

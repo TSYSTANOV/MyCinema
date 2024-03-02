@@ -12,8 +12,25 @@
     text-transform: uppercase;
     opacity: 0.1;
     margin-bottom: 60px;
+    
 }
-
+.other-films__title_load-more{
+    max-width: 1330px;
+    margin: 0 auto;
+    font-family: Raleway, sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 130%;
+    text-transform: uppercase;
+    opacity: 0.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.other-films__title_load-more > svg{
+    max-width: 15%;
+    height: auto;
+}
 .other-films__title-add {
     display: block;
     text-align: right;
@@ -24,7 +41,7 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, calc(100% * 3 / 12 - 30px)));
     flex-wrap: wrap;
     gap: 40px 30px;
-    margin-bottom: 210px;
+    margin-bottom: 180px;
     justify-items: center;
 }
 
